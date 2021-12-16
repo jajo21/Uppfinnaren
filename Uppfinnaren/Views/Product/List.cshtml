@@ -1,0 +1,18 @@
+﻿@model ProductListViewModel
+
+@{
+    ViewData["Title"] = "Produkter";
+}
+
+<h1>@Model.CurrentPage</h1>
+        @foreach (var product in Model.Products)
+{
+    <div class="post-container box-shadow">
+        <h2 class="post-title">@product.Name</h2>
+        <div class="post-thumb"><img alt="Bild på @product.Name" src="@Url.Content(@product.ImageUrl)"/></div>
+        <div class="post-content">
+            <h4>@product.Description</h4>
+            <h3>@product.Price.ToString("c")</h3>
+        </div>
+    </div>
+}
