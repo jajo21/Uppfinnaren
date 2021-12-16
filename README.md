@@ -8,7 +8,7 @@
 ## Instruktioner
 
 *Vad behöver göras för att ditt program ska starta och gå och använda?*
-**Kräver .NET SDK**
+**Kräver .NET SDK** och att
 **Navigera till rätt mapp och skriv "dotnet run" i terminalen**
 
 ## TODO - Kvar att göra
