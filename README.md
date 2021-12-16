@@ -22,7 +22,7 @@ Jag anser att jag har hunnit med allt som krävs för denna uppgift. Lägger til
 |**2**  |**Ja**| |
 |**3**  |**Ja**| |
 |**4**  |**Ja**| |
-|**5**  |**Ja**|*En annan sida som går att besöka från webbservern visar uppfinnarens kontaktuppgifter* **Jag uppfattade det här kravet som att man kunde göra en helt statisk sida och det har jag också gjort även om det känns lite fel efter allt vi har lärt oss de senaste veckorna :)** |
+|**5**  |**Ja**|*En annan sida som går att besöka från webbservern visar uppfinnarens kontaktuppgifter* - **Jag uppfattade det här kravet som att man kunde göra en helt statisk sida och det har jag också gjort även om det känns lite fel efter allt vi har lärt oss de senaste veckorna :)** |
 |**6**  |**Ja**| |
 
 ## Förtydliganden/motivering
