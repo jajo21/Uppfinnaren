@@ -13,7 +13,7 @@ namespace Uppfinnaren.Controllers
             _productRepository = productRepository;
         }
 
-        public IActionResult List()
+        public ViewResult List()
         {
             ProductListViewModel productListViewModel = new ProductListViewModel();
             productListViewModel.Products = _productRepository.AllProducts;
