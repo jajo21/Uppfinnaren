@@ -76,19 +76,19 @@ body {
 /* Product styles
 -------------------------------------------------- */
 
-.product-container {
+.post-container {
     margin: 20px 20px 0 0;
     border: 1px solid #e5e5e5;
     overflow: auto
 }
 
-.product-thumb {
+.post-thumb {
     float: left;
     width: 30%;
     margin-right: 10px;
 }
 
-.product-thumb img {
+.post-thumb img {
     display: block;    
     width: 100%;
     height: auto;
