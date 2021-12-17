@@ -75,30 +75,26 @@ body {
 
 /* Product styles
 -------------------------------------------------- */
-img {
-    width: 100%;
-    height: auto;
-}
 
-.post-container {
+.product-container {
     margin: 20px 20px 0 0;
     border: 1px solid #e5e5e5;
     overflow: auto
 }
 
-.post-thumb {
+.product-thumb {
     float: left;
     width: 30%;
     margin-right: 10px;
 }
 
-.post-thumb img {
-    display: block;
+.product-thumb img {
+    display: block;    
+    width: 100%;
+    height: auto;
 }
 
 .post-title {
-    font-weight: bold;
-    font-size: 200%;
     padding: 9px;
     background: #f3f2f2
 }
