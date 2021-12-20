@@ -7,10 +7,12 @@ namespace Uppfinnaren.Controllers
     public class ProductController : Controller
     {
         private readonly IProductRepository _productRepository;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public ProductController(IProductRepository productRepository)
+        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
 
         public ViewResult List()
@@ -18,7 +20,7 @@ namespace Uppfinnaren.Controllers
             ProductListViewModel productListViewModel = new ProductListViewModel();
             productListViewModel.Products = _productRepository.AllProducts;
 
-            productListViewModel.CurrentPage = "Uppfinningar till salu";
+            productListViewModel.CurrentCategory = "Uppfinningar till salu";
             return View(productListViewModel);
         }
     }

@@ -25,6 +25,7 @@ namespace Uppfinnaren
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IProductRepository, MockProductRepository>();
+            services.AddScoped<ICategoryRepository, MockCategoryRepository>();
             services.AddControllersWithViews();
         }
 
