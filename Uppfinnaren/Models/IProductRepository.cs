@@ -4,10 +4,7 @@ namespace Uppfinnaren.Models
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> AllProducts 
-        { 
-            get { return this.AllProducts; } 
-        }
+        IEnumerable<Product> AllProducts { get; }
         Product GetProductById(int productId); 
     }
 }
