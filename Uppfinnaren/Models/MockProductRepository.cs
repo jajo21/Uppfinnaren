@@ -18,5 +18,10 @@ namespace Uppfinnaren.Models
         {
             return AllProducts.FirstOrDefault(x => x.ProductId == productId);
         }
+
+        public IEnumerable<Product> GetProductsByCategory(Category category)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -25,5 +25,9 @@ namespace Uppfinnaren.Models
         {
             return _appDbContext.Products.FirstOrDefault(p => p.ProductId == productId);
         }
+        public IEnumerable<Product> GetProductsByCategory(Category category)
+        {
+            return _appDbContext.Products.Where(p => p.CategoryId == category.CategoryId);
+        }
     }
 }
