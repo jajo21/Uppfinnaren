@@ -73,7 +73,7 @@ namespace Uppfinnaren.Models
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 4,
-                Name = "Halsband",
+                Name = "Vackert halsband",
                 Price = 1999,
                 Description = "Ett vackert halsband",
                 CategoryId = 3,
@@ -84,7 +84,7 @@ namespace Uppfinnaren.Models
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 5,
-                Name = "Skulptur",
+                Name = "Huvudskulptur",
                 Price = 3999,
                 Description = "En härlig skupltur till ett pangpris",
                 CategoryId = 2,
@@ -95,7 +95,7 @@ namespace Uppfinnaren.Models
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 6,
-                Name = "Tavla",
+                Name = "Fågeltavlan",
                 Price = 1499,
                 Description = "Ett vackert verk på fåglar",
                 CategoryId = 1,
