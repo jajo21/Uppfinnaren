@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppfinnaren", "Uppfinnaren.csproj", "{AA7C06D3-7130-4FC2-9171-EA1E3CBEA6AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Uppfinnaren", "Uppfinnaren.csproj", "{AA7C06D3-7130-4FC2-9171-EA1E3CBEA6AA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Uppfinnaren.Tests", "Uppfinnaren.Tests", "{34A209DC-FF5D-4F85-877B-7A590732D3DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Uppfinnaren.Tests", "..\Uppfinnaren.Tests\Uppfinnaren.Tests.csproj", "{D0F87F80-E597-46A1-BA39-AFED5C337A93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{AA7C06D3-7130-4FC2-9171-EA1E3CBEA6AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA7C06D3-7130-4FC2-9171-EA1E3CBEA6AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA7C06D3-7130-4FC2-9171-EA1E3CBEA6AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F87F80-E597-46A1-BA39-AFED5C337A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F87F80-E597-46A1-BA39-AFED5C337A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F87F80-E597-46A1-BA39-AFED5C337A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F87F80-E597-46A1-BA39-AFED5C337A93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D0F87F80-E597-46A1-BA39-AFED5C337A93} = {34A209DC-FF5D-4F85-877B-7A590732D3DC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6052FF88-EF4C-4A0A-AF91-A0211169C28E}
