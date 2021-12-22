@@ -9,13 +9,6 @@ namespace Uppfinnaren.Tests
     public class UppfinnarenTest
     {
         [Fact]
-        public void SeeIfConnectionWithModelsWorks()
-        {
-            var products = new MockProductRepository();
-            Assert.True(products != null);
-        }
-
-        [Fact]
         public void CanFilterProductsByCategoryMock() //Checking if method can get all products in a category
         {
             MockProductRepository testProductRepository = new();
@@ -32,26 +25,50 @@ namespace Uppfinnaren.Tests
             Assert.Equal(expectedCategoryId, actualCategoryId); // Går detta test igenom betyder det att man kan filtrera produkterna via kategorier
             Assert.Equal(expectedProductCount, actualProductCount); // Går detta test igenom betyder det att den har fått med alla produkter i kategorin
         }
+        [Fact]
+        public void CanFilterProductsByCategoryMock2()
+        {
+            MockProductRepository testProductRepository = new();
+
+            var products = testProductRepository.AllProducts.Where(p => p.Category.CategoryName == "Verktyg");
+
+            int expectedCategoryId = 4; 
+            int actualCategoryId = products.FirstOrDefault().CategoryId;
+            int expectedProductCount = 2; 
+            int actualProductCount = products.Count();
+
+            Assert.Equal(expectedCategoryId, actualCategoryId); // Går detta test igenom betyder det att man kan filtrera produkterna via kategorier
+            Assert.Equal(expectedProductCount, actualProductCount); // Går detta test igenom betyder det att den har fått med alla produkter i kategorin
+        }
 
         [Fact]
-        public void CanGetProductById() // Checking if method can get product by id
+        public void CanGetProductById() // Kollar om metoden kan hämta en produkt genom rätt id
         {
             MockProductRepository testProductRepository = new();
 
             var actualProductName = testProductRepository.GetProductById(1).Name;
-
             string expectedProductName = "Skottkärra";
 
             Assert.Equal(expectedProductName, actualProductName);
         }
         [Fact]
-        public void CanGetAllProducts() // Checking if method can get all products
+        public void CanGetAllProducts() // Kollar om metoden kan hämta alla produkter
         {
             MockProductRepository testProductRepository = new();
 
             var actualNumberOfProducts = testProductRepository.AllProducts.Count();
-
             int expectedNumberOfProducts = 6;
+
+            Assert.Equal(expectedNumberOfProducts, actualNumberOfProducts);
+        }
+
+        [Fact]
+        public void CanGetAllCategories() // Kollar om metoden kan hämta alla produkter
+        {
+            MockCategoryRepository testCategoryRepository = new();
+
+            var actualNumberOfProducts = testCategoryRepository.AllCategories.Count();
+            int expectedNumberOfProducts = 5;
 
             Assert.Equal(expectedNumberOfProducts, actualNumberOfProducts);
         }

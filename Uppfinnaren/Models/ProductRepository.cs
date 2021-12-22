@@ -21,7 +21,7 @@ namespace Uppfinnaren.Models
             }
         }
 
-        public Product GetProductById(int productId)
+        public Product GetProductById(int productId) // Överflödig, ta bort!
         {
             return _appDbContext.Products.FirstOrDefault(p => p.ProductId == productId);
         }
