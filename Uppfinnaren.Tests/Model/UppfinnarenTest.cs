@@ -9,13 +9,13 @@ namespace Uppfinnaren.Tests
     public class UppfinnarenTest
     {
         [Fact]
-        public void FilterProductsByCategory() //Checking if method can get all products in a category
+        public void FilterProductsByCategoryMockData() //Testar att metoderna GetCategoryByName och GetProductByCategory kan hämta alla produkter i specifik kategori.
         {
-            MockProductRepository testProductRepository = new();
-            MockCategoryRepository testCategoryRepository = new();
+            MockCategoryRepository _categoryRepository = new();
+            MockProductRepository _productRepository = new();
 
-            var category = testCategoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == "Verktyg");
-            var products = testProductRepository.GetProductsByCategory(category);
+            var category = _categoryRepository.GetCategoryByName("Verktyg");
+            var products = _productRepository.GetProductsByCategory(category);
 
             int expectedCategoryId = 4; // Verktygs kategori id är nummer 4 och bör stämma överens med verktygen som befinner sig i den kategorin
             int actualCategoryId = products.FirstOrDefault().CategoryId; // Hämtar första produktens information och tar fram CategoryId för att jämföra, bör vara 4
@@ -26,70 +26,45 @@ namespace Uppfinnaren.Tests
             Assert.Equal(expectedProductCount, actualProductCount); // Går detta test igenom betyder det att den har fått med alla produkter i kategorin
         }
         [Fact]
-        public void FilterProductsByCategoryMock2()
-        {
-            MockProductRepository testProductRepository = new();
-
-            var products = testProductRepository.AllProducts.Where(p => p.Category.CategoryName == "Verktyg");
-
-            int expectedCategoryId = 4; 
-            int actualCategoryId = products.FirstOrDefault().CategoryId;
-            int expectedProductCount = 2; 
-            int actualProductCount = products.Count();
-
-            Assert.Equal(expectedCategoryId, actualCategoryId); // Går detta test igenom betyder det att man kan filtrera produkterna via kategorier
-            Assert.Equal(expectedProductCount, actualProductCount); // Går detta test igenom betyder det att den har fått med alla produkter i kategorin
-        }
-
-        [Fact]
-        public void CanGetProductById() // Kollar om metoden kan hämta en produkt genom rätt id
-        {
-            MockProductRepository testProductRepository = new();
-
-            var actualProductName = testProductRepository.GetProductById(1).Name;
-            string expectedProductName = "Skottkärra";
-
-            Assert.Equal(expectedProductName, actualProductName);
-        }
-        [Fact]
-        public void GetAllProducts() // Kollar om metoden kan hämta alla produkter
-        {
-            MockProductRepository testProductRepository = new();
-
-            var actualNumberOfProducts = testProductRepository.AllProducts.Count();
-            int expectedNumberOfProducts = 6;
-
-            Assert.Equal(expectedNumberOfProducts, actualNumberOfProducts);
-        }
-
-        [Fact]
-        public void GetAllCategories() // Kollar om metoden kan hämta alla produkter
-        {
-            MockCategoryRepository testCategoryRepository = new();
-
-            var actualNumberOfProducts = testCategoryRepository.AllCategories.Count();
-            int expectedNumberOfProducts = 5;
-
-            Assert.Equal(expectedNumberOfProducts, actualNumberOfProducts);
-        }
-
-        [Fact]
-        public void FilterProductsByCategoryDataBase()
+        public void FilterProductsByCategoryDataBase() // I stort sätt samma funktionalitet som testas som ovan. Fast mot InMemoryDatabasen istället.
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase("test").Options;
 
             using var _appDbContext = new AppDbContext(options);
-            ProductRepository productRepository = new(_appDbContext);
-            CategoryRepository categoryRepository = new(_appDbContext);
+            ProductRepository _productRepository = new(_appDbContext);
+            CategoryRepository _categoryRepository = new(_appDbContext);
 
-            var category = categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == "Tavlor");
-            var products = productRepository.GetProductsByCategory(category);
+            var category = _categoryRepository.GetCategoryByName("Tavlor");
+            var products = _productRepository.GetProductsByCategory(category);
 
-            int actualCategoryId = 1;
-            int expectedCategoryId = products.FirstOrDefault().CategoryId;
+            int expectedCategoryId =  1;
+            int actualCategoryId = products.FirstOrDefault().CategoryId;
+            int expectedCategories = 5;
+            int actualCategories = _categoryRepository.AllCategories.Count();    // Här kollar jag däremot att alla kategorier finns i InMemoryDatabas-listan
+                                                                                
+            Assert.Equal(expectedCategoryId,actualCategoryId);
+            Assert.Equal(expectedCategories,actualCategories);
+        }
+        [Fact]
+        public void GetAllProducts() // Testar att AllProducts innehåller rätt antal kategorier
+        {
+            MockProductRepository _productRepository = new();
 
-            Assert.Equal(actualCategoryId, expectedCategoryId);
+            var actualNumberOfProducts = _productRepository.AllProducts.Count();
+            int expectedNumberOfProducts = 6;
+
+            Assert.Equal(expectedNumberOfProducts, actualNumberOfProducts);
+        }
+        [Fact]
+        public void GetAllCategories() // Testar att AllCategories innehåller rätt antal kategorier
+        {
+            MockCategoryRepository _categoryRepository = new();
+
+            var actualNumberOfProducts = _categoryRepository.AllCategories.Count();
+            int expectedNumberOfProducts = 5;
+
+            Assert.Equal(expectedNumberOfProducts, actualNumberOfProducts);
         }
     }
 }

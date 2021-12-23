@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Uppfinnaren.Models
 {
@@ -7,11 +8,15 @@ namespace Uppfinnaren.Models
         public IEnumerable<Category> AllCategories =>
             new List<Category>
             {
-                new Category{CategoryId=1, CategoryName="Tavlor", Description="Vackra tavlor."},
-                new Category{CategoryId=2, CategoryName="Skulpturer", Description="Fantastiska skulpturer."},
-                new Category{CategoryId=3, CategoryName="Smycken", Description="Underbara smycken."},
-                new Category{CategoryId=4, CategoryName="Verktyg", Description="Funktionella uppfinningar som fungerar till och för olika verktyg i livet."},
-                new Category{CategoryId=5, CategoryName="Möbler", Description ="Uppfinningsrika möbler"}
+                new Category{CategoryId=1, CategoryName="Tavlor"},
+                new Category{CategoryId=2, CategoryName="Skulpturer"},
+                new Category{CategoryId=3, CategoryName="Smycken"},
+                new Category{CategoryId=4, CategoryName="Verktyg"},
+                new Category{CategoryId=5, CategoryName="Möbler"}
             };
+        public Category GetCategoryByName(string categoryName)
+        {
+            return AllCategories.FirstOrDefault(c => c.CategoryName == categoryName);
+        }
     }
 }

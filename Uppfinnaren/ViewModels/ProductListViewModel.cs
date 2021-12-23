@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using Uppfinnaren.Models;
 
-namespace Uppfinnaren.ViewModel
+namespace Uppfinnaren.ViewModels
 {
+    //Här adderas en property för varje typ av data som vi kommer att behöva i vår view
     public class ProductListViewModel
     {
         IEnumerable<Product> products;

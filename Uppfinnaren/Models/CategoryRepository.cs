@@ -13,5 +13,10 @@ namespace Uppfinnaren.Models
         }
 
         public IEnumerable<Category> AllCategories => _appDbContext.Categories;
+
+        public Category GetCategoryByName(string categoryName)
+        {
+            return _appDbContext.Categories.FirstOrDefault(c => c.CategoryName == categoryName);
+        }
     }
 }

@@ -17,13 +17,8 @@ namespace Uppfinnaren.Models
         {
             get 
             { 
-                return _appDbContext.Products.Include(c => c.Category); 
+                return _appDbContext.Products.Include(c => c.Category);  
             }
-        }
-
-        public Product GetProductById(int productId) // Överflödig, ta bort!
-        {
-            return _appDbContext.Products.FirstOrDefault(p => p.ProductId == productId);
         }
         public IEnumerable<Product> GetProductsByCategory(Category category)
         {

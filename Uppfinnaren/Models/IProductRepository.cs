@@ -2,10 +2,10 @@
 
 namespace Uppfinnaren.Models
 {
+    //Produkt-interface, alla klasser som ärver det här interfacet behöver inkludera samma metoder.
     public interface IProductRepository
     {
         IEnumerable<Product> AllProducts { get; }
-        Product GetProductById(int productId);
         public IEnumerable<Product> GetProductsByCategory(Category category);
     }
 }

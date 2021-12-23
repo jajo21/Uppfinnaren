@@ -2,16 +2,16 @@
 
 namespace Uppfinnaren.Models
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : DbContext // DbContext = en bas-DbContext klass som kommer från EF-Core paketet
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
             this.Database.EnsureCreated();
         }
 
-        DbSet<Product> products;
+        DbSet<Product> products; //Databasen ska hantera produkter
 
-        DbSet<Category> categories;
+        DbSet<Category> categories; //Databasen ska hantera kategorier
 
         public DbSet<Product> Products
         {
@@ -30,11 +30,11 @@ namespace Uppfinnaren.Models
             base.OnModelCreating(modelBuilder);
 
             //seed categories
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Tavlor", Description = "Vackra tavlor." });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Skulpturer", Description = "Fantastiska skulpturer." });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Smycken", Description = "Underbara smycken." });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 4, CategoryName = "Verktyg", Description = "Funktionella uppfinningar som fungerar till och för olika verktyg i livet." });
-            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 5, CategoryName = "Möbler", Description = "Uppfinningsrika möbler" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 1, CategoryName = "Tavlor" });
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 2, CategoryName = "Skulpturer"});
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 3, CategoryName = "Smycken"});
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 4, CategoryName = "Verktyg"});
+            modelBuilder.Entity<Category>().HasData(new Category { CategoryId = 5, CategoryName = "Möbler"});
 
             //seed pies
             modelBuilder.Entity<Product>().HasData(new Product
@@ -44,8 +44,7 @@ namespace Uppfinnaren.Models
                 Price = 899,
                 Description = "Den ultimata skottkärran som väcker snack i trädgårdarna!",
                 CategoryId = 4,
-                ImageUrl = "~/images/skottkärra.jpg",
-                InStock = true
+                ImageUrl = "~/images/skottkärra.jpg"
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -55,8 +54,7 @@ namespace Uppfinnaren.Models
                 Price = 1399,
                 Description = "En fantastisk pjäs hemma i köket att hacka salladen på!",
                 CategoryId = 5,
-                ImageUrl = "~/images/bord.jpg",
-                InStock = true
+                ImageUrl = "~/images/bord.jpg"
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -66,8 +64,7 @@ namespace Uppfinnaren.Models
                 Price = 349,
                 Description = "En låda att ha verktygen i!",
                 CategoryId = 4,
-                ImageUrl = "~/images/verktygslåda.jpg",
-                InStock = true
+                ImageUrl = "~/images/verktygslåda.jpg"
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -77,8 +74,7 @@ namespace Uppfinnaren.Models
                 Price = 1999,
                 Description = "Ett vackert halsband",
                 CategoryId = 3,
-                ImageUrl = "~/images/halsband.jpg",
-                InStock = true
+                ImageUrl = "~/images/halsband.jpg"
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -88,8 +84,7 @@ namespace Uppfinnaren.Models
                 Price = 3999,
                 Description = "En härlig skupltur till ett pangpris",
                 CategoryId = 2,
-                ImageUrl = "~/images/skulptur.jpg",
-                InStock = true
+                ImageUrl = "~/images/skulptur.jpg"
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
@@ -99,8 +94,7 @@ namespace Uppfinnaren.Models
                 Price = 1499,
                 Description = "Ett vackert verk på fåglar",
                 CategoryId = 1,
-                ImageUrl = "~/images/tavla.jpg",
-                InStock = true
+                ImageUrl = "~/images/tavla.jpg"
             });
         }
     }
