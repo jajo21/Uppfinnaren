@@ -9,7 +9,7 @@ namespace Uppfinnaren.Tests
     public class UppfinnarenTest
     {
         [Fact]
-        public void CanFilterProductsByCategoryMock() //Checking if method can get all products in a category
+        public void FilterProductsByCategory() //Checking if method can get all products in a category
         {
             MockProductRepository testProductRepository = new();
             MockCategoryRepository testCategoryRepository = new();
@@ -26,7 +26,7 @@ namespace Uppfinnaren.Tests
             Assert.Equal(expectedProductCount, actualProductCount); // Går detta test igenom betyder det att den har fått med alla produkter i kategorin
         }
         [Fact]
-        public void CanFilterProductsByCategoryMock2()
+        public void FilterProductsByCategoryMock2()
         {
             MockProductRepository testProductRepository = new();
 
@@ -52,7 +52,7 @@ namespace Uppfinnaren.Tests
             Assert.Equal(expectedProductName, actualProductName);
         }
         [Fact]
-        public void CanGetAllProducts() // Kollar om metoden kan hämta alla produkter
+        public void GetAllProducts() // Kollar om metoden kan hämta alla produkter
         {
             MockProductRepository testProductRepository = new();
 
@@ -63,7 +63,7 @@ namespace Uppfinnaren.Tests
         }
 
         [Fact]
-        public void CanGetAllCategories() // Kollar om metoden kan hämta alla produkter
+        public void GetAllCategories() // Kollar om metoden kan hämta alla produkter
         {
             MockCategoryRepository testCategoryRepository = new();
 
@@ -74,7 +74,7 @@ namespace Uppfinnaren.Tests
         }
 
         [Fact]
-        public void CanFilterProductsByCategoryDataBase()
+        public void FilterProductsByCategoryDataBase()
         {
             var options = new DbContextOptionsBuilder<AppDbContext>()
                 .UseInMemoryDatabase("test").Options;
