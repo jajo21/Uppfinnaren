@@ -14,7 +14,7 @@ namespace Uppfinnaren.Components
 
         public IViewComponentResult Invoke()
         {
-            var categories = _categoryRepository.AllCategories.OrderBy(c => c.CategoryName);
+            var categories = _categoryRepository.AllCategories.OrderBy(c => c.CategoryId);
             return View(categories);
         }
     }
