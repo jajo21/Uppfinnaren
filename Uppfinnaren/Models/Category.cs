@@ -6,7 +6,6 @@ namespace Uppfinnaren.Models
     {
         int categoryId;
         string categoryName;
-        string description;
         List<Product> products;
 
         public int CategoryId
@@ -18,11 +17,6 @@ namespace Uppfinnaren.Models
         {
             get { return categoryName; }
             set { categoryName = value; }
-        }
-        public string Description
-        {
-            get { return description; }
-            set { description = value; }
         }
         public List<Product> Products
         {

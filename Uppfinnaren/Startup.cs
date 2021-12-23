@@ -25,10 +25,10 @@ namespace Uppfinnaren
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseInMemoryDatabase("products"));
-            services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddDbContext<AppDbContext>(options => 
+                options.UseInMemoryDatabase("products"));   // Lägger till en "tjänst" så att applikationen känner till och kan köra EF-core & InMemoryDatabasen
+            services.AddScoped<IProductRepository, ProductRepository>(); // Lägger till en "tjänst" tillsammans med interfacet
+            services.AddScoped<ICategoryRepository, CategoryRepository>(); // RLägger till en "tjänst" tillsammans med interfacet
             services.AddControllersWithViews();
         }
 

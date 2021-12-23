@@ -17,7 +17,6 @@ namespace Uppfinnaren.Models
                     Description = "Den ultimata skottkärran som väcker snack i trädgårdarna!",
                     CategoryId = 4,
                     ImageUrl = "~/images/skottkärra.jpg",
-                    InStock = true,
                     Category = _categoryRepository.AllCategories.ToList()[3]
                 },
                 new Product 
@@ -28,7 +27,6 @@ namespace Uppfinnaren.Models
                     Description = "En fantastisk pjäs hemma i köket att hacka salladen på!",
                     CategoryId = 5,
                     ImageUrl = "~/images/bord.jpg",
-                    InStock = true,
                     Category = _categoryRepository.AllCategories.ToList()[4]
                 },
                 new Product 
@@ -39,7 +37,6 @@ namespace Uppfinnaren.Models
                     Description = "En låda att ha verktygen i!",
                     CategoryId = 4,
                     ImageUrl = "~/images/verktygslåda.jpg",
-                    InStock = true,
                     Category = _categoryRepository.AllCategories.ToList()[3]
                 },
                 new Product
@@ -50,7 +47,6 @@ namespace Uppfinnaren.Models
                     Description = "Ett vackert halsband",
                     CategoryId = 3,
                     ImageUrl = "~/images/halsband.jpg",
-                    InStock = true,
                     Category = _categoryRepository.AllCategories.ToList()[2]
                 },
                 new Product
@@ -61,7 +57,6 @@ namespace Uppfinnaren.Models
                     Description = "En härlig skupltur till ett pangpris",
                     CategoryId = 2,
                     ImageUrl = "~/images/skulptur.jpg",
-                    InStock = true,
                     Category = _categoryRepository.AllCategories.ToList()[1]
                 },
                 new Product
@@ -72,15 +67,9 @@ namespace Uppfinnaren.Models
                     Description = "Ett vackert verk på fåglar",
                     CategoryId = 1,
                     ImageUrl = "~/images/tavla.jpg",
-                    InStock = true,
                     Category = _categoryRepository.AllCategories.ToList()[0]
                 },
             };
-
-        public Product GetProductById(int productId)
-        {
-            return AllProducts.FirstOrDefault(x => x.ProductId == productId);
-        }
 
         public IEnumerable<Product> GetProductsByCategory(Category category)
         {

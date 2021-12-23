@@ -7,7 +7,6 @@
         string description;
         double price;
         string imageUrl;
-        bool inStock;
         int categoryId;
         Category category;
         public int ProductId
@@ -34,11 +33,6 @@
         {
             get { return this.imageUrl; }
             set { this.imageUrl = value; }
-        }
-        public bool InStock
-        {
-            get { return this.inStock; }
-            set { this.inStock = value; }
         }
         public int CategoryId
         {
