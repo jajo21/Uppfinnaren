@@ -10,7 +10,7 @@
 ## Syfte - YH-utbildning: Webbutvecklare .NET
 * Inlämningsuppgift i kursen Dynamiska Webbsystem 1 - December 2021
 * Beskrivning: Målet i denna uppgift är att utveckla en dynamisk webbapplikation med ASP.NET och designmönstret MVC. I denna uppgift ska jag skapa min första riktiga webbapplikation i C#, kunden är i detta fallet en erkänd träslöjdslärare och uppfinnare som i många år sålt sina tokiga skapelser lokalt, men nu vill nå ut till en bredare publik, och därför anlitat mig som webbutvecklare. Uppfinnaren, d.v.s. min kund i denna uppgift, vill komma igång snabbt med en hemsida där hen kan visa upp sina skapade altser i ett digitalalt galleri - ungefär som produkter i en vanlig webbbutik - men om möjligt med en mer kreativ touch. I framtiden kommer ni tillsammans vidareutveckla hemsidan med stöd för beställningar - men klart till denna inlämning vill hen först sen en ganska enkel sida.
-* Resultat: 100/100 (VG)
+* Resultat: Version 1 = 100/100(G), Version 2 = 100/100 (VG)
 
 ## Tekniker
 * C#
