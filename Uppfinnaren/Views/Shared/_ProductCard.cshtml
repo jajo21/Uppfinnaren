@@ -1,0 +1,12 @@
+﻿@model Product
+
+<div class="post-container box-shadow">
+    <h2 class="post-title">@Model.Name</h2>
+    <div class="post-thumb">
+        <img alt="Bild på @Model.Name" src="@Url.Content(@Model.ImageUrl)" />
+    </div>
+    <div class="post-content">
+        <h4>@Model.Description</h4>
+        <h3>@Model.Price.ToString("c")</h3>
+    </div>
+</div>

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,7 +25,10 @@ namespace Uppfinnaren
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IProductRepository, MockProductRepository>();
+            services.AddDbContext<AppDbContext>(options => 
+                options.UseInMemoryDatabase("products"));   // Lägger till en "tjänst" så att applikationen känner till och kan köra EF-core & InMemoryDatabasen
+            services.AddScoped<IProductRepository, ProductRepository>(); // Lägger till en "tjänst" tillsammans med interfacet
+            services.AddScoped<ICategoryRepository, CategoryRepository>(); // RLägger till en "tjänst" tillsammans med interfacet
             services.AddControllersWithViews();
         }
 
