@@ -1,4 +1,4 @@
-# Uppfinnaren - December 2021
+# Uppfinnaren 1.0 - December 2021
 ## Instruktioner
 1. Ladda ner repot från https://github.com/jajo21/Uppfinnaren
 2. Leta upp valfri terminal och utgå från mappen "./Uppfinnaren"
